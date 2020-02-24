@@ -22,7 +22,7 @@ function varargout = SpikingNeuronSimulation(varargin)
 
 % Edit the above text to modify the response to help SpikingNeuronSimulation
 
-% Last Modified by GUIDE v2.5 31-May-2019 14:33:40
+% Last Modified by GUIDE v2.5 09-Jan-2020 02:59:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -54,6 +54,9 @@ function SpikingNeuronSimulation_OpeningFcn(hObject, eventdata, handles, varargi
 
 % Choose default command line output for SpikingNeuronSimulation
 handles.output = hObject;
+
+% set(handles.figure1,'Units','Pixels','Position',get(0,'ScreenSize'),'outerposition',[0 0 1 1])
+set(handles.figure1, 'units','normalized','outerposition',[0 0 1 1]);
 
 set(handles.noiseValue,'Enable','off')
 a = 0.02; b = 0.2; c=-65; d=8;
@@ -347,3 +350,11 @@ function axes2_DeleteFcn(hObject, eventdata, handles)
 % hObject    handle to axes2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbuttonClassification.
+function pushbuttonClassification_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbuttonClassification (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+SpikingNeuronSimulation_Classification;
